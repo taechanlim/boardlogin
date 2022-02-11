@@ -1,0 +1,28 @@
+{% extends "_layout.html" %}
+{% block content %}
+게시판 뷰 페이지
+<ul>
+    <li>
+        <strong>제목</strong>
+        : {{ list.subject }}
+    </li>
+    <li>
+        <strong>작성자</strong>
+        : {{ list.username }}
+    </li>
+    <li>
+        <strong>내용</strong>
+        : {{ list.text }}
+    </li>
+    <li>
+        <strong>작성일</strong>
+        : {{ list.date }}
+    </li>
+</ul>
+<a href="/board/list">목록가기</a>
+<a href="/board/update?index={{index}}">수정하기</a>
+<form method="post" action="/board/delete">
+    <input type="hidden" name="index" value="{{index}}">
+    <input type="submit" value="삭제">
+</form>
+{% endblock %}

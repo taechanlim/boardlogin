@@ -1,0 +1,14 @@
+{% extends "_layout.html" %}
+{% block content %}
+게시판 글쓰기 페이지
+<form method="post" action="/board/write">
+    <ul>
+        <li>제목 : <input type="text" name="subject"></li>
+        <li>작성자 : <input type="text" name="username"></li>
+        <li>내용 : <input type="text" name="text"></li>
+        <li>작성일 : <input type="text" name="date"></li>
+    </ul>
+    <input type="submit" value="글작성">
+</form>
+{% endblock %}
+

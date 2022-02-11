@@ -1,0 +1,26 @@
+{% extends "_layout.html" %}
+{% block content %}
+게시판 수정 페이지
+<form method="post" action="/board/update">
+    <input type="hidden" name="index" value="{{index}}">
+    <ul>
+        <li>
+            <strong>제목</strong>
+            : <input type="text" name="subject" value="{{list.subject}}">
+        </li>
+        <li>
+            <strong>작성자</strong>
+            : <input type="text" name="username" value="{{list.username}}">
+        </li>
+        <li>
+            <strong>내용</strong>
+            : <input type="text" name="text" value="{{list.text}}">
+        </li>
+        <li>
+            <strong>작성일</strong>
+            : <input type="text" name="date" value="{{list.date}}">
+        </li>
+    </ul>
+    <input type="submit" value="수정">
+</form>
+{% endblock %}
